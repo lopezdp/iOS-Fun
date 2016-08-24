@@ -15,6 +15,8 @@ int main(int argc, const char * argv[]) {
         int testScore; //holds a test score
         int sum = 0; // accumulator
         double avg;
+        char letterGrade = '\0';
+        
         
         //prompt user for the number of exams
         NSLog(@"How many exams: ");
@@ -33,6 +35,48 @@ int main(int argc, const char * argv[]) {
         
         //display the average
         NSLog(@"Your average is: %.2f", avg);
+        
+        switch((int) avg)
+        {
+            case 0 ... 59:
+                letterGrade = 'F';
+                break;
+                
+            case 60 ... 69:
+                letterGrade = 'D';
+                break;
+                
+            case 70 ... 79:
+                letterGrade = 'C';
+                break;
+                
+            case 80 ... 89:
+                letterGrade = 'B';
+                break;
+                
+            case 90 ... 100:
+                letterGrade = 'A';
+                break;
+        }
+        
+        NSLog(@"Your Letter Grade is: %c", letterGrade);
+        
+        if(avg >= 0.0 && avg < 60.0)
+            letterGrade = 'F';
+        else if(avg >= 60.0 && avg < 70.0)
+            letterGrade = 'D';
+        else if(avg >= 70.0 && avg < 80.0)
+            letterGrade = 'C';
+        else if(avg >= 80.0 && avg < 90.0)
+            letterGrade = 'B';
+        else if(avg >= 90.0 && avg <= 100.0)
+            letterGrade = 'A';
+        else
+            NSLog(@"Your Letter Grade is bogus.");
+        
+        NSLog(@"Your Letter Grade is: %c", letterGrade);
+        
+        
     }
     return 0;
 }
