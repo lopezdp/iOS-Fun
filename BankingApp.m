@@ -13,31 +13,34 @@ int main(int argc, const char * argv[]) {
         
         int menuSelect;
         
-        NSLog(@"\n \n Please enter a number to select a menu item: \n 1. Make a Withdrawl \n 2. Make a Deposit \n 3. Balance Inquiry \n 4. Money Market \n 5. Exit \n");
-        
-        scanf("%d", &menuSelect);
-        
-        switch (menuSelect)
+        do
         {
-            case 1:
-                NSLog(@"\n You Selected to make a Withdrawl");
-                break;
-            case 2:
-                NSLog(@"\n You Selected to make a Deposit");
-                break;
-            case 3:
-                NSLog(@"\n You Selected to make a Balance Inquiry");
-                break;
-            case 4:
-                NSLog(@"\n You Selected to make a Money Market Transaction");
-                break;
-            case 5:
-                NSLog(@"\n You Selected to Exit");
-                break;
-            default:
-                NSLog(@"\n You entered an incorrect selection. Program will Exit.");
-                break;
-        }
+            NSLog(@"\n \n Please enter a number to select a menu item: \n 1. Make a Withdrawl \n 2. Make a Deposit \n 3. Balance Inquiry \n 4. Money Market \n 5. Exit \n");
+            
+            scanf("%d", &menuSelect);
+            
+            switch (menuSelect)
+            {
+                case 1:
+                    NSLog(@"\n \n You Selected to make a Withdrawl \n");
+                    break;
+                case 2:
+                    NSLog(@"\n \n You Selected to make a Deposit \n");
+                    break;
+                case 3:
+                    NSLog(@"\n \n You Selected to make a Balance Inquiry \n");
+                    break;
+                case 4:
+                    NSLog(@"\n \n You Selected to make a Money Market Transaction \n");
+                    break;
+                case 5:
+                    NSLog(@"\n \n You Selected to Exit \n");
+                    break;
+                default:
+                    NSLog(@"\n \n Please enter a menu selection!! \n");
+                    break;
+            }
+        }while(menuSelect != 5);
         
     }
     return 0;
